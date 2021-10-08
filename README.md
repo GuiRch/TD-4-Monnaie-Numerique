@@ -25,6 +25,19 @@ Pour insatller Quorum on suit les instructions présentes dans le fichier `BUILD
 
 ![build quorum](https://user-images.githubusercontent.com/62909821/136551001-7e422ddb-4c4f-4803-b314-381f7ab94f23.PNG)
 
+Pour vérifier que tout est bien installer on lance la commande : 
+
+```shell
+export PATH=$PATH:/home/administrateur1/quorum/build/bin
+geth version 
+```
+
+Si tout s'est déroulé correctement on obtient quelque chose du style :
+
+![geth version path](https://user-images.githubusercontent.com/62909821/136555434-71d166fc-0d3f-4295-ace3-12961495a673.PNG)
+
+On place la commande ci dessus dans le dossier `~/.bashrc` pour pouvoir lancer la commande `geth` a tout moment.
+
 ## Connect Geth to our group's private network (2 pts)
 
 https://docs.goquorum.consensys.net/en/stable/Tutorials/Private-Network/Create-IBFT-Network/
