@@ -46,15 +46,16 @@ On place la commande ci dessus débutant avec "export" dans le dossier `~/.bashr
 
 Pour initialiser geth avec notre fichier genesis on crée un dossier *ibftInit/* dans lequel on va créer et remplir **genesis.json**. On revient ensuite à la racine et on entre la commande suivante ``geth init --datadir data init ibftInit/genesis.json`` qui va alors créer un nouveau dossier *data/*. On observe qu'on obtient bien le résultat attendu avec la bonne database 'lightchaindata' et le bon hash.
 
-***Insérer image ici***
+![init genesis](https://user-images.githubusercontent.com/62894505/136674756-55a2b797-a196-4900-9748-ab75450bf81f.png)
 
 on viendra mettre dans ce nouveau dossier *data/* le **static-nodes.json**.
 
 Après s'être replacé un dossier avant la commande suivante à lancer est ``PRIVATE_CONFIG=ignore geth --datadir "./data"``. Il est recommandé de retirer *'nohup'* si cette commande est présente, en effet, elle empêche l'affichage des logs et on ne peut pas savoir tout de suite si nous nous sommes correctement connecté. Si tout se passe bien voilà ce qui devrait s'afficher :
 
-***Image 1***
+![connection logs 1](https://user-images.githubusercontent.com/62894505/136674724-a0e6ce01-173c-484f-9e88-968cab28bf68.png)
 
-***Image 2***
+![connection logs 2](https://user-images.githubusercontent.com/62894505/136674764-c74fd5ae-f584-4257-86c5-42b663cba10c.png)
+
 
 Pour continuer il va falloir ouvrir une nouvelle console.
 
@@ -65,3 +66,4 @@ Pour continuer il va falloir ouvrir une nouvelle console.
 ## Configure Tessera (3 pts)
 
 ## Create a private smart contract with
+
