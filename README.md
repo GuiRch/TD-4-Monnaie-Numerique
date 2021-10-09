@@ -2,7 +2,11 @@
 
 ## SSH setup (2 pts)
 
+Pour cette étape il suffit de reproduire à l'identique ce qui a déjà été fait aux TD précédents et notamment au 1.
+
 ## UFW config (2 pts)
+
+Pour le moment nous avons autorisé que le port 22 pour ssh, si besoin nous ferons d'autres adaptations.
 
 ## Installing dependencies (2 pts)
 
@@ -15,7 +19,7 @@ sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt install golang-go
 ```
-Neanmoins il semblerait que ce n'est pas une installation officielle, mais elle a fonctionné pour nous 
+Neanmoins il semblerait que ce n'est pas une installation officielle, mais elle a fonctionné pour nous.
 
 Pour plus de détails voir : https://github.com/golang/go/wiki/Ubuntu
 
@@ -36,12 +40,23 @@ Si tout s'est déroulé correctement on obtient quelque chose du style :
 
 ![geth version path](https://user-images.githubusercontent.com/62909821/136555434-71d166fc-0d3f-4295-ace3-12961495a673.PNG)
 
-On place la commande ci dessus dans le dossier `~/.bashrc` pour pouvoir lancer la commande `geth` a tout moment.
+On place la commande ci dessus débutant avec "export" dans le dossier `~/.bashrc` et `~/.bash_profile` pour pouvoir lancer la commande `geth` a tout moment.
 
 ## Connect Geth to our group's private network (2 pts)
 
-https://docs.goquorum.consensys.net/en/stable/Tutorials/Private-Network/Create-IBFT-Network/
-Genesis file and static-node.json file attached below
+Pour initialiser geth avec notre fichier genesis on crée un dossier *ibftInit/* dans lequel on va créer et remplir **genesis.json**. On revient ensuite à la racine et on entre la commande suivante ``geth init --datadir data init ibftInit/genesis.json`` qui va alors créer un nouveau dossier *data/*. On observe qu'on obtient bien le résultat attendu avec la bonne database 'lightchaindata' et le bon hash.
+
+***Insérer image ici***
+
+on viendra mettre dans ce nouveau dossier *data/* le **static-nodes.json**.
+
+Après s'être replacé un dossier avant la commande suivante à lancer est ``PRIVATE_CONFIG=ignore geth --datadir "./data"``. Il est recommandé de retirer *'nohup'* si cette commande est présente, en effet, elle empêche l'affichage des logs et on ne peut pas savoir tout de suite si nous nous sommes correctement connecté. Si tout se passe bien voilà ce qui devrait s'afficher :
+
+***Image 1***
+
+***Image 2***
+
+Pour continuer il va falloir ouvrir une nouvelle console.
 
 ## Deploy a contract (2 pts)
 
