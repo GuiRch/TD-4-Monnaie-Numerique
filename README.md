@@ -63,6 +63,47 @@ Pour continuer il va falloir ouvrir une nouvelle console.
 
 ## Installing Tessera (2 pts)
 
+Avant de pouvoir installer Tessera, il faut installer les dépendences : Java JDK et libsodium (optionel)
+
+### Java JDK:
+
+On s'assure que Java n'est pas présent en faisant `java -version`
+Si Java est bel est bien absent on installe Java dans un premier temps :
+
+```shell
+sudo apt update
+sudo apt install default-jre
+
+#Pour vérifier que Java est bien installé
+java -version
+```
+
+Une fois que Java est installé sur notre machine distante, on installe Java JDK :
+
+```shell
+sudo apt install default-jdk
+
+#Pour vérifier que Java JDK est bien installé
+javac -version
+```
+### Libsodium (optionel)
+
+```shell
+wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
+sudo tar xvzf LATEST.targ.gz
+cd libsodium-latest
+sudo ./configure
+sudo make && make check
+sudo make install
+```
+
+### Installation Tessera
+
+```shell
+wget https://codeload.github.com/ConsenSys/tessera/tar.gz/refs/tags/tessera-21.10.0
+tar xvf tessera-21.10.0
+```
+
 ## Configure Tessera (3 pts)
 
 ## Create a private smart contract with
