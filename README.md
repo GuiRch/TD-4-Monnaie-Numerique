@@ -121,6 +121,32 @@ On observe que les fichiers ont bien été générés et notamment le *truffle-c
 
 Une fois que cette étape sera faite il faudra compiler avec ``truffle compile`` puis déployer/migrer avec ``truffle migrate``.
 
+On se rend ensuite dans le dossier contracts `cd contracts`
+
+Ensuite on crée un contrat très simple `hello.sol`
+
+```shell
+touch hello.sol
+
+#On ouvre le fichier
+
+nano hello.sol
+```
+
+puis on y ajoute le code suivant :
+
+```solidity
+pragma solidity ^0.5.0;
+
+contract Hello {
+  string public message;
+
+  function setMessage(string memory initialMessage) public {
+    message = initialMessage;
+  }
+}
+```
+
 ## Installing Tessera (2 pts) <a name="tessera"></a>
 
 Avant de pouvoir installer Tessera, il faut installer les dépendences : Java JDK et libsodium (optionel)
